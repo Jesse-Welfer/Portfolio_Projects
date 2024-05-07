@@ -78,10 +78,13 @@ set t1.industry = t2.industry
 where t1.industry is null 
 and t2.industry is not null;
 
+-- deleting unnecessary columns and rows
 delete
 from layoffs_staging2
 where total_laid_off is null and percentage_laid_off is null;
 
 alter table layoffs_staging2
 drop column row_num;
+
+-- Data is cleaned and ready for exploratory analysis
  
